@@ -1,5 +1,8 @@
 .DS_Store
-02-streamlit/__pycache__/
-02-streamlit/venv/
-02-streamlit/ui/__pycache__/
-02-streamlit/models/__pycache__/
+streamlit/__pycache__/
+streamlit/venv/
+streamlit/ui/__pycache__/
+streamlit/models/__pycache__/
+streamlit/ui/components/__pycache__/
+streamlit/ui/screens/__pycache__/
+
