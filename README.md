@@ -1,70 +1,117 @@
-### Mobile Testing Setup (MUST HAVE):
+# Facial Emotion Recognition System 
 
---> Expo Go App
-<!-- (Required for testing the React Native application on your mobile device) -->
-- For iOS users: Download from [App Store](https://apps.apple.com/app/expo-go/id982107779)
-- For Android users: Download from [Google Play Store](https://play.google.com/store/apps/details?id=host.exp.exponent)
+A comprehensive end-to-end system that detects faces using **YOLOv8** and classifies facial expressions using a custom-trained **InceptionV3** model. This application provides a real-time analysis pipeline with a step-by-step visualization of image processing, developed as part of our coursework to demonstrate practical applications of computer vision.
 
-===
+---
 
-### Important Notes for Mobile Testing:
+## 📑 Project Report & Documentation
 
-After successfully setting up and running the frontend application, you will see a QR code displayed in your terminal or browser. To interact with the app on your mobile device:
+Detailed documentation regarding the methodology, experiments, and results can be found here:
 
-1. Make sure your mobile device is connected to the same WiFi network as your development computer
-2. Open the camera app on iOS (or Expo Go app on Android) 
-3. Scan the QR code displayed after running the frontend
-4. The app will automatically load on your mobile device through Expo Go
+* **[📜 Final Project Report (PDF)](https://www.google.com/search?q=YOUR_LINK_TO_REPORT_HERE)**
 
-This allows you to test and interact with the application directly on your mobile device with a native experience, instead of using the web or simulator version.
+---
 
-===
+## 👥 Group Members - Class MSA34HCM
 
-### Project Environment (MUST HAVE): 
+| No. | Name | Student ID |
+| --- | --- | --- |
+| 1 | **Võ Hạnh Tân** | 25MS23260 |
+| 2 | **Lê Thanh Phương Nam** | 25MS23308 |
+| 3 | **Trần Quế Tử** | 25MS23291 |
+| 4 | **Đinh Trần Quốc Tuấn** | 25MS23309 |
+| 5 | **Trần Việt Phúc** | 25MS23272 |
 
---> Python 3.12.8 
-<!-- (Required for the backend Flask application and AI models) -->
-Download Python via this link: https://www.python.org/downloads/
+## 📺 Demo Video
 
---> Node.js v20.14.0 
-<!-- (Required for the frontend React Native application) -->
-Download Node.JS environment via this link: https://nodejs.org/download/release/v20.14.0/
+> *Click the badge above to watch the system in action.*
 
---> MySQL Installer
-If you don't know to install and setup MySQL (Server and Workbench) following the tutorial via this link: https://youtu.be/u96rVINbAUI?si=N-spbcctQgKdQfC9
-Download MySQL Installer via this link: https://dev.mysql.com/downloads/installer/
---> MySQL Workbench (if needed)
-Download MySQL Workbench tool via this link: https://dev.mysql.com/downloads/workbench/
+---
 
-===
+## 📂 Project Structure
 
-### Clone the project (if needed):  
-Download that repository via this link: 
+```text
+facial_image_emotion_app/
+├── jupyter_notebooks/                                  # Model Development (Not for production)
+│   ├── ivp501-emotion-preprocessing.ipynb              # Image processing pipeline development
+│   ├── ivp501-inceptionv3-emotion-training.ipynb       # InceptionV3 model training
+<!-- │   └── 03_experiments.ipynb                            # Model evaluation and experiments -->
+├── streamlit/                  # Production Web Application
+│   ├── models/                 # AI Weights & Configurations
+│   │   ├── best_model_processed.pth
+│   │   ├── class_indices.json
+│   │   ├── yolov8n-face.pt
+│   │   └── service.py          # Core AI logic & Image Pipeline
+│   ├── ui/                     # UI Components & Screens
+│   │   ├── components/
+│   │   ├── screens/            # Home, Shooting, and Result screens
+│   │   └── styles/             # Global CSS styles
+│   ├── app.py                  # Main entry point
+│   ├── requirements.txt        # Dependencies
+│   └── utils.py                # Helper functions
+└── README.md
 
-===
+```
 
-### Watch the Project Setup Tutorial video (if needed): 
-### Watch the Project Demo video (if needed): 
+---
 
-===
+## 🧪 Model Development (Jupyter Notebooks)
 
-### Backend Environment Setup (MUST DO FIRST): 
-1. Navigate to the project directory in your terminal.
-2. Navigate to `01-backend` directory following this command: `cd 01-backend/`
-3. Read the `README.MD` file in this directory to understand how to run the project and do the requirements strictly as the project guide "Installation Steps" step by step.
+The `jupyter_notebooks` folder contains the full research and training process.
 
-### Frontend Environment Setup (MUST DO): 
-1. Navigate to the project directory in your terminal.
-2. Navigate to `00-frontend` directory following this command: `cd 00-frontend/`
-3. Read the `README.MD` file in this directory to understand how to run the project and do the requirements strictly as the project guide "Installation Steps" step by step.
+> **Note:** These files are for educational and reference purposes to understand how the model was built; they are **not** required to run the web application.
 
-===
+1. **Preprocessing Notebook:** [View on Kaggle/Link](https://www.kaggle.com/code/namle25/ivp501-emotion-preprocessing) - Focuses on CLAHE, Bilateral Filtering, and Sharpening techniques.
+2. **Training Notebook:** [View on Kaggle/Link](https://www.kaggle.com/code/nabby25/ivp501-inceptionv3-emotion-training) - Two-stage training (Transfer Learning + Fine-tuning) using InceptionV3.
+<!-- 3. **Experiment Notebook:** [View on Kaggle/Link](https://www.google.com/search?q=YOUR_LINK) - Comparative analysis between raw dataset and processed dataset performance. -->
 
-### Data Preprocessing & Model Training:
-If you're interested in seeing how the recommendation model was trained:
-- Access online via Google Colab: https://colab.research.google.com/drive/1uNd4ImZRo-ll84lnms0WzyspwbRg8LeL?usp=sharing
-- Or locally in the project: `cd 01-backend/jupyter_notebook/` and view the file ``
-===
+---
 
+## 🛠️ Installation & Setup
 
+### 1. Navigate to directory
 
+```bash
+cd streamlit
+
+```
+
+### 2. Create Virtual Environment
+
+* **Windows:** `python -m venv venv`
+* **macOS/Linux:** `python3 -m venv venv`
+
+### 3. Activate Environment
+
+* **Windows:** `.\venv\Scripts\activate`
+* **macOS/Linux:** `source venv/bin/activate`
+
+### 4. Install & Run
+
+```bash
+pip install -r requirements.txt
+streamlit run app.py
+
+```
+
+Once successful, your browser will automatically open the app at `http://localhost:8501`.
+
+---
+
+## 🔍 Analysis Pipeline Visualization
+
+The application features a dedicated **Analysis Tab** that reveals the internal "thinking" process of the AI:
+
+* **Step 1:** Face Detection via YOLOv8.
+* **Step 2:** Grayscale Conversion.
+* **Step 3:** Bilateral Denoising.
+* **Step 4:** CLAHE (Contrast Enhancement).
+* **Step 5:** Unsharp Masking (Sharpening).
+
+---
+
+## 📝 Requirements
+
+* Python 3.9+
+* Webcam (for live capture)
+* Stable internet connection 
