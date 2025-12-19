@@ -8,7 +8,8 @@ A comprehensive end-to-end system that detects faces using **YOLOv8** and classi
 
 Detailed documentation regarding the methodology, experiments, and results can be found here:
 
-* **[📜 Final Project Report (PDF)](https://www.google.com/search?q=YOUR_LINK_TO_REPORT_HERE)**
+* **[📜 Final Project Report (PDF)](https://github.com/user-attachments/files/24258215/Group3_MSA34HCM_Emotion.Recognition.pdf)
+
 
 ---
 
