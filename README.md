@@ -24,7 +24,7 @@ Detailed documentation regarding the methodology, experiments, and results can b
 
 ## 📺 Demo Video
 
-> *Click the badge above to watch the system in action.*
+Uploading DEMO-2-2.mp4…
 
 ---
 
