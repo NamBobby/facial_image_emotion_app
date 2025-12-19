@@ -24,7 +24,7 @@ Detailed documentation regarding the methodology, experiments, and results can b
 
 ## 📺 Demo Video
 
-Uploading DEMO-2-2.mp4…
+https://github.com/user-attachments/assets/f621eae5-d88c-42d4-bb29-3a58f6eff9ff
 
 ---
 
