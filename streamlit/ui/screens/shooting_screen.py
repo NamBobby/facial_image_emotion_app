@@ -1,7 +1,7 @@
 import streamlit as st
 from ui.components import navigation
 from models import service
-import utils
+import app_utils as utils
 
 def show():
     # Input UI (Camera / Upload)

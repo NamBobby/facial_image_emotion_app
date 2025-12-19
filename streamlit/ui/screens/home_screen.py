@@ -1,5 +1,5 @@
 import streamlit as st
-import utils 
+import app_utils as utils
 
 def show():
     # Background image setup
