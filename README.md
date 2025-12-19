@@ -35,7 +35,7 @@ facial_image_emotion_app/
 ├── jupyter_notebooks/                                  # Model Development (Not for production)
 │   ├── ivp501-emotion-preprocessing.ipynb              # Image processing pipeline development
 │   ├── ivp501-inceptionv3-emotion-training.ipynb       # InceptionV3 model training
-<!-- │   └── 03_experiments.ipynb                            # Model evaluation and experiments -->
+│   └── ivp501-experiment-final.ipynb                   # Model evaluation and experiments
 ├── streamlit/                  # Production Web Application
 │   ├── models/                 # AI Weights & Configurations
 │   │   ├── best_model_processed.pth
@@ -63,7 +63,7 @@ The `jupyter_notebooks` folder contains the full research and training process.
 
 1. **Preprocessing Notebook:** [View on Kaggle/Link](https://www.kaggle.com/code/namle25/ivp501-emotion-preprocessing) - Focuses on CLAHE, Bilateral Filtering, and Sharpening techniques.
 2. **Training Notebook:** [View on Kaggle/Link](https://www.kaggle.com/code/nabby25/ivp501-inceptionv3-emotion-training) - Two-stage training (Transfer Learning + Fine-tuning) using InceptionV3.
-<!-- 3. **Experiment Notebook:** [View on Kaggle/Link](https://www.google.com/search?q=YOUR_LINK) - Comparative analysis between raw dataset and processed dataset performance. -->
+3. **Experiment Notebook:** [View on Kaggle/Link](https://www.kaggle.com/code/dinhtranquoctuan/ivp501-experiment-final) - Comparative analysis between raw dataset and processed dataset performance.
 
 ---
 

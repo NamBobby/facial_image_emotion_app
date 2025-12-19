@@ -12,27 +12,27 @@ def get_circle_color(emotion):
     return colors.get(emotion, "#D1D1D1")
 
 def show():
-    # 1. Lấy dữ liệu từ Session State
+    # Retrieve data from Session State
     emotion = st.session_state.get('emotion_result', 'Unknown')
     captured_file = st.session_state.get('captured_file', None)
-    analysis_steps = st.session_state.get('analysis_steps', None) # Các bước ảnh từ service
+    analysis_steps = st.session_state.get('analysis_steps', None) 
     
     circle_color = get_circle_color(emotion)
 
-    # Nút Back
-    if st.button("⬅ Back", key="back_btn_result"):
+    # Back Button
+    if st.button("Back", key="back_btn_result"):
         st.session_state.current_screen = "shooting"
         st.rerun()
 
-    # --- TẠO TABS ---
-    tab1, tab2 = st.tabs(["🎯 Result", "🔍 Analysis"])
+    # Create Tabs
+    tab1, tab2 = st.tabs(["Result", "Analysis"])
 
     with tab1:
-        # Hiển thị ảnh gốc đã chụp
+        # Display original captured image
         if captured_file:
             st.image(captured_file, caption="Captured Image", use_container_width=True)
         
-        # Hiển thị vòng tròn kết quả cảm xúc
+        # Display emotion result circle
         html_result = f"""
         <div style="display: flex; justify-content: center; margin-top: 20px;">
             <div style="
@@ -55,12 +55,12 @@ def show():
         st.write("Dưới đây là các bước tiền xử lý trước khi đưa vào InceptionV3:")
 
         if analysis_steps:
-            # Hiển thị ảnh theo hàng dọc hoặc lưới
+            # Display processing steps
             for step_name, step_img in analysis_steps.items():
                 with st.expander(f"Step: {step_name}", expanded=True):
                     st.image(step_img, use_container_width=True)
                     
-                    # Giải thích thêm cho người dùng (tùy chọn)
+                    # Add explanations
                     if "CLAHE" in step_name:
                         st.caption("Tăng cường độ tương phản cục bộ giúp các nếp nhăn cảm xúc rõ nét hơn.")
                     elif "Sharp" in step_name:
@@ -68,7 +68,7 @@ def show():
         else:
             st.info("Không có dữ liệu phân tích. Vui lòng chụp ảnh lại.")
 
-    # Thêm phần biểu đồ xác suất ở dưới cùng nếu có dữ liệu
+    # Confidence Score Chart
     if 'prob_df' in st.session_state:
         st.divider()
         st.write("### Confidence Score")
